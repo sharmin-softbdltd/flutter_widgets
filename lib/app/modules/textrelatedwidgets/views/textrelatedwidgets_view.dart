@@ -37,6 +37,10 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
                 height: 5,
               ),
               SelectableText(
+                showCursor: true,
+                cursorWidth: 2,
+                cursorRadius: Radius.circular(5),
+                cursorColor: Colors.red,
                 'Success is not final, failure is not fatal. It is the courage to continue that counts.',
                 style: TextStyle(
                   fontSize: 14,

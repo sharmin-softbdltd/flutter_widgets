@@ -19,6 +19,23 @@ class HomeView extends GetView<HomeController> {
         ),
         centerTitle: true,
       ),
+      drawer: Drawer(
+        backgroundColor: Colors.pink,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            DrawerHeader(
+              decoration:
+                  BoxDecoration(border: Border(bottom: BorderSide.none)),
+              child: Text(
+                'Widgets Lists',
+                style: TextStyle(color: Colors.white, fontSize: 18),
+              ),
+            ),
+            Divider(),
+          ],
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(20),
@@ -56,16 +73,36 @@ class HomeView extends GetView<HomeController> {
               SizedBox(
                 height: 5,
               ),
-              Text(
-                '4: Layout',
-                style: TextStyle(fontSize: 20),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed('/layoutrelatedwidgets');
+                },
+                child: Text(
+                  '4: Layout',
+                  style: TextStyle(fontSize: 20),
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Get.toNamed('/searchrelatedwidgets');
+                },
+                child: Text(
+                  '5: Search bar',
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
-                '5: Search bar',
+                '6: Page view ',
                 style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(
+                height: 5,
               ),
             ],
           ),
