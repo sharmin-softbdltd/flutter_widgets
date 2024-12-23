@@ -1,7 +1,11 @@
 import 'package:get/get.dart';
 
+import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.dart';
+import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/textrelatedwidgets/bindings/textrelatedwidgets_binding.dart';
+import '../modules/textrelatedwidgets/views/textrelatedwidgets_view.dart';
 
 part 'app_routes.dart';
 
@@ -15,6 +19,16 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.TEXTRELATEDWIDGETS,
+      page: () => const TextrelatedwidgetsView(),
+      binding: TextrelatedwidgetsBinding(),
+    ),
+    GetPage(
+      name: _Paths.BUTTONRELATEDWIDGETS,
+      page: () => const ButtonrelatedwidgetsView(),
+      binding: ButtonrelatedwidgetsBinding(),
     ),
   ];
 }
