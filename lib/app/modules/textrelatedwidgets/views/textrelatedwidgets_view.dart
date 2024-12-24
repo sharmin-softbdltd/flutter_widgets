@@ -12,10 +12,6 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
       appBar: AppBar(
         title: const Text(
           'Text Related widgets',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         centerTitle: true,
       ),
@@ -28,10 +24,7 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               // SELECTABLE TEXT
               SelectableText(
                 '1: Selectable Text',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -42,9 +35,7 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
                 cursorRadius: Radius.circular(5),
                 cursorColor: Colors.red,
                 'Success is not final, failure is not fatal. It is the courage to continue that counts.',
-                style: TextStyle(
-                  fontSize: 14,
-                ),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               SizedBox(
                 height: 20,
@@ -52,19 +43,14 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               // UN SELECTABLE TEXT
               Text(
                 '2: Unselectable Text',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
                 'Success is not final, failure is not fatal. It is the courage to continue that counts.',
-                style: TextStyle(
-                  fontSize: 14,
-                ),
+                style: Theme.of(context).textTheme.bodySmall,
               ),
               SizedBox(
                 height: 20,
@@ -72,10 +58,7 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               // RICH TEXT
               Text(
                 '3: Rich Text ',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -83,19 +66,20 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               RichText(
                 text: TextSpan(
                   text: 'Hello, ',
-                  style: TextStyle(fontSize: 14, color: Colors.black),
-                  children: const <TextSpan>[
+                  style: Theme.of(context).textTheme.bodySmall,
+                  children: <TextSpan>[
                     TextSpan(
                       text: 'italic word ',
-                      style: TextStyle(
-                        fontStyle: FontStyle.italic,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontStyle: FontStyle.italic,
+                          ),
                     ),
                     TextSpan(
                       text: ' bold word!',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            fontStyle: FontStyle.italic,
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ],
                 ),
@@ -106,33 +90,34 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               // SELECTABLE RICH TEXT
               Text(
                 '4: Selectable Rich Text ',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
               ),
 
               SelectableText.rich(
-                style: TextStyle(
-                  fontSize: 14,
-                ),
+                style: Theme.of(context).textTheme.bodySmall,
                 TextSpan(
                   text: 'Hello, ',
-                  children: const [
+                  children: [
                     TextSpan(
                       text: '\nred word ',
-                      style: TextStyle(color: Colors.red),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Colors.red,
+                          ),
                     ),
                     TextSpan(
                       text: '\nblue word ',
-                      style: TextStyle(color: Colors.blue),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Colors.blue,
+                          ),
                     ),
                     TextSpan(
                       text: '\ngreen word ',
-                      style: TextStyle(color: Colors.green),
+                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                            color: Colors.green,
+                          ),
                     ),
                   ],
                 ),
@@ -143,10 +128,7 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
               // SELECTABLE TEXT WITH SELECTION AREA
               Text(
                 '5: Selectable and Unselectable text',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -155,10 +137,15 @@ class TextrelatedwidgetsView extends GetView<TextrelatedwidgetsController> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Selectable text with in Selection area.'),
+                    Text(
+                      'Selectable text with in Selection area.',
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
                     SelectionContainer.disabled(
-                      child:
-                          Text('Not Selectable text with in Selection area. '),
+                      child: Text(
+                        'Not Selectable text with in Selection area.',
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                     )
                   ],
                 ),

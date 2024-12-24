@@ -13,10 +13,6 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
       appBar: AppBar(
         title: Text(
           'Button Related Widgets',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         centerTitle: true,
       ),
@@ -29,10 +25,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // ELEVATED BUTTON
               Text(
                 '1: Elevated Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -72,10 +65,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // TEXT BUTTON
               Text(
                 '2: Text Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -101,10 +91,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // OUTLINED BUTTON
               Text(
                 '3: OutLined Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -123,10 +110,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // ICON BUTTON
               Text(
                 '4: Icon Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -178,10 +162,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // FLOATING ACTION BUTTON
               Text(
                 '5: Floating Action Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -196,10 +177,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // FILLED BUTTON
               Text(
                 '6: Filled Button',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -215,10 +193,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // FILLED BUTTON.TONAL BUTTON
               Text(
                 '7: Filled Button.tonal',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -233,10 +208,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // SEGMENTED BUTTON FOR SINGLE SELECTION
               Text(
                 '8: Segmented Button (Single Selection)',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,
@@ -288,10 +260,7 @@ class ButtonrelatedwidgetsView extends GetView<ButtonrelatedwidgetsController> {
               // SEGMENTED BUTTON FOR MULTIPLE SELECTION
               Text(
                 '9: Segmented Button (Multi Selections)',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(
                 height: 5,

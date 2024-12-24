@@ -8,106 +8,117 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<HomeController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Flutter Widgets',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
+          'Home',
         ),
         centerTitle: true,
       ),
       drawer: Drawer(
         backgroundColor: Colors.pink,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             DrawerHeader(
-              decoration:
-                  BoxDecoration(border: Border(bottom: BorderSide.none)),
               child: Text(
                 'Widgets Lists',
-                style: TextStyle(color: Colors.white, fontSize: 18),
+                style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
-            Divider(),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/buttonrelatedwidgets');
+              },
+              hoverColor: Colors.white70,
+              title: Text(
+                'Buttons',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/textrelatedwidgets');
+              },
+              title: Text(
+                'Texts',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/buttonrelatedwidgets');
+              },
+              title: Text(
+                'Input Fields',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/layoutrelatedwidgets');
+              },
+              title: Text(
+                'Layout',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/searchrelatedwidgets');
+              },
+              title: Text(
+                'Search Bar',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/pageviewwidget');
+              },
+              title: Text(
+                'Page View',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed('/buttonrelatedwidgets');
-                },
-                child: Text(
-                  '1: Buttons',
-                  style: TextStyle(fontSize: 20),
+      body: Obx(() {
+        return controller.screens[controller.selectedIndex.value];
+      }),
+      bottomNavigationBar: Obx(() {
+        return NavigationBar(
+          indicatorColor: Colors.pink,
+          onDestinationSelected: (index) {
+            controller.selectedIndex.value = index;
+          },
+          // indicatorColor: Colors.pink,
+          selectedIndex: controller.selectedIndex.value,
+          height: 70,
+          destinations: [
+            NavigationDestination(
+                icon: Icon(
+                  Icons.home,
                 ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed('/textrelatedwidgets');
-                },
-                child: Text(
-                  '2: Texts',
-                  style: TextStyle(fontSize: 20),
+                label: 'Home'),
+            NavigationDestination(icon: Icon(Icons.shop), label: 'Shop'),
+            NavigationDestination(
+                icon: Icon(
+                  Icons.add_a_photo_rounded,
                 ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                '3: Input Field',
-                style: TextStyle(fontSize: 20),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed('/layoutrelatedwidgets');
-                },
-                child: Text(
-                  '4: Layout',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              GestureDetector(
-                onTap: () {
-                  Get.toNamed('/searchrelatedwidgets');
-                },
-                child: Text(
-                  '5: Search bar',
-                  style: TextStyle(fontSize: 20),
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text(
-                '6: Page view ',
-                style: TextStyle(fontSize: 20),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-            ],
-          ),
-        ),
-      ),
+                label: 'Add'),
+            NavigationDestination(icon: Icon(Icons.rocket), label: 'Discover'),
+            NavigationDestination(icon: Icon(Icons.settings), label: 'Setting'),
+          ],
+        );
+      }),
     );
   }
 }

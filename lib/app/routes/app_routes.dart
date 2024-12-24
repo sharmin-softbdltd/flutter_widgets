@@ -10,6 +10,7 @@ abstract class Routes {
   static const SEARCHRELATEDWIDGETS = _Paths.SEARCHRELATEDWIDGETS;
   static const DRAWERWIDGET = _Paths.DRAWERWIDGET;
   static const LAYOUTRELATEDWIDGETS = _Paths.LAYOUTRELATEDWIDGETS;
+  static const PAGEVIEWWIDGET = _Paths.PAGEVIEWWIDGET;
 }
 
 abstract class _Paths {
@@ -21,4 +22,5 @@ abstract class _Paths {
   static const SEARCHRELATEDWIDGETS = '/searchrelatedwidgets';
   static const DRAWERWIDGET = '/drawerwidget';
   static const LAYOUTRELATEDWIDGETS = '/layoutrelatedwidgets';
+  static const PAGEVIEWWIDGET = '/pageviewwidget';
 }

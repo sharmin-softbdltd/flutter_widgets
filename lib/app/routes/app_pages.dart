@@ -8,6 +8,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
 import '../modules/layoutrelatedwidgets/views/layoutrelatedwidgets_view.dart';
+import '../modules/pageviewwidget/bindings/pageviewwidget_binding.dart';
+import '../modules/pageviewwidget/views/pageviewwidget_view.dart';
 import '../modules/searchrelatedwidgets/bindings/searchrelatedwidgets_binding.dart';
 import '../modules/searchrelatedwidgets/views/searchrelatedwidgets_view.dart';
 import '../modules/textrelatedwidgets/bindings/textrelatedwidgets_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.LAYOUTRELATEDWIDGETS,
       page: () => const LayoutrelatedwidgetsView(),
       binding: LayoutrelatedwidgetsBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAGEVIEWWIDGET,
+      page: () => const PageviewwidgetView(),
+      binding: PageviewwidgetBinding(),
     ),
   ];
 }

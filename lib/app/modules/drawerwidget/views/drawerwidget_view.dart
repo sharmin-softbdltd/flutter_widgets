@@ -12,10 +12,6 @@ class DrawerwidgetView extends GetView<DrawerwidgetController> {
       appBar: AppBar(
         title: const Text(
           'Drawer widget',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         centerTitle: true,
       ),

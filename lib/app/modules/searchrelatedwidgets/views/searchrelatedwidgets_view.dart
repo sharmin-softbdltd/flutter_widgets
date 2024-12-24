@@ -13,10 +13,6 @@ class SearchrelatedwidgetsView extends GetView<SearchrelatedwidgetsController> {
       appBar: AppBar(
         title: const Text(
           'Search related widgets',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         centerTitle: true,
       ),
@@ -32,8 +28,10 @@ class SearchrelatedwidgetsView extends GetView<SearchrelatedwidgetsController> {
                 elevation: WidgetStatePropertyAll(2),
                 leading: Icon(Icons.search),
                 hintText: 'search..',
-                hintStyle:
-                    WidgetStatePropertyAll(TextStyle(color: Colors.grey)),
+                hintStyle: WidgetStatePropertyAll(Theme.of(context)
+                    .textTheme
+                    .bodySmall!
+                    .copyWith(color: Colors.grey)),
                 padding: WidgetStatePropertyAll(
                   EdgeInsets.symmetric(horizontal: 20),
                 ),
@@ -47,18 +45,11 @@ class SearchrelatedwidgetsView extends GetView<SearchrelatedwidgetsController> {
                   return RichText(
                     text: TextSpan(
                       text: 'User\'s Search Query = ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                       children: [
                         TextSpan(
                           text: controller.searchQuery.value,
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),
@@ -73,18 +64,11 @@ class SearchrelatedwidgetsView extends GetView<SearchrelatedwidgetsController> {
                   return RichText(
                     text: TextSpan(
                       text: 'User\'s Submitted Query = ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                      ),
+                      style: Theme.of(context).textTheme.bodySmall,
                       children: [
                         TextSpan(
                           text: controller.submittedQuery.value,
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold),
+                          style: Theme.of(context).textTheme.bodyMedium,
                         ),
                       ],
                     ),

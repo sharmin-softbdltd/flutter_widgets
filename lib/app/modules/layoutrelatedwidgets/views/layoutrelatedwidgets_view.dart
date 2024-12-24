@@ -12,10 +12,6 @@ class LayoutrelatedwidgetsView extends GetView<LayoutrelatedwidgetsController> {
       appBar: AppBar(
         title: const Text(
           'Layout Related Widgets',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
         ),
         centerTitle: true,
       ),
