@@ -13,6 +13,7 @@ abstract class Routes {
   static const PAGEVIEWWIDGET = _Paths.PAGEVIEWWIDGET;
   static const LISTVIEWBUILDERPAGE = _Paths.LISTVIEWBUILDERPAGE;
   static const LISTVIEWSEPARATORPAGE = _Paths.LISTVIEWSEPARATORPAGE;
+  static const GRIDVIEWPAGE = _Paths.GRIDVIEWPAGE;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const PAGEVIEWWIDGET = '/pageviewwidget';
   static const LISTVIEWBUILDERPAGE = '/listviewbuilderpage';
   static const LISTVIEWSEPARATORPAGE = '/listviewseparatorpage';
+  static const GRIDVIEWPAGE = '/gridviewpage';
 }

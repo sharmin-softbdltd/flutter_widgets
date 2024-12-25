@@ -4,6 +4,8 @@ import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.da
 import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
 import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
 import '../modules/drawerwidget/views/drawerwidget_view.dart';
+import '../modules/gridviewpage/bindings/gridviewpage_binding.dart';
+import '../modules/gridviewpage/views/gridviewpage_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
@@ -71,6 +73,11 @@ class AppPages {
       name: _Paths.LISTVIEWSEPARATORPAGE,
       page: () => const ListviewseparatorpageView(),
       binding: ListviewseparatorpageBinding(),
+    ),
+    GetPage(
+      name: _Paths.GRIDVIEWPAGE,
+      page: () => const GridviewpageView(),
+      binding: GridviewpageBinding(),
     ),
   ];
 }
