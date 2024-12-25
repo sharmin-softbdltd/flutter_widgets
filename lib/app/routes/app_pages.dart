@@ -8,6 +8,10 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
 import '../modules/layoutrelatedwidgets/views/layoutrelatedwidgets_view.dart';
+import '../modules/listviewbuilderpage/bindings/listviewbuilderpage_binding.dart';
+import '../modules/listviewbuilderpage/views/listviewbuilderpage_view.dart';
+import '../modules/listviewseparatorpage/bindings/listviewseparatorpage_binding.dart';
+import '../modules/listviewseparatorpage/views/listviewseparatorpage_view.dart';
 import '../modules/pageviewwidget/bindings/pageviewwidget_binding.dart';
 import '../modules/pageviewwidget/views/pageviewwidget_view.dart';
 import '../modules/searchrelatedwidgets/bindings/searchrelatedwidgets_binding.dart';
@@ -57,6 +61,16 @@ class AppPages {
       name: _Paths.PAGEVIEWWIDGET,
       page: () => const PageviewwidgetView(),
       binding: PageviewwidgetBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTVIEWBUILDERPAGE,
+      page: () => const ListViewBuilderPage(),
+      binding: ListViewBuilderPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTVIEWSEPARATORPAGE,
+      page: () => const ListviewseparatorpageView(),
+      binding: ListviewseparatorpageBinding(),
     ),
   ];
 }

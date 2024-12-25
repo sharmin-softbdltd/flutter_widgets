@@ -11,6 +11,8 @@ abstract class Routes {
   static const DRAWERWIDGET = _Paths.DRAWERWIDGET;
   static const LAYOUTRELATEDWIDGETS = _Paths.LAYOUTRELATEDWIDGETS;
   static const PAGEVIEWWIDGET = _Paths.PAGEVIEWWIDGET;
+  static const LISTVIEWBUILDERPAGE = _Paths.LISTVIEWBUILDERPAGE;
+  static const LISTVIEWSEPARATORPAGE = _Paths.LISTVIEWSEPARATORPAGE;
 }
 
 abstract class _Paths {
@@ -23,4 +25,6 @@ abstract class _Paths {
   static const DRAWERWIDGET = '/drawerwidget';
   static const LAYOUTRELATEDWIDGETS = '/layoutrelatedwidgets';
   static const PAGEVIEWWIDGET = '/pageviewwidget';
+  static const LISTVIEWBUILDERPAGE = '/listviewbuilderpage';
+  static const LISTVIEWSEPARATORPAGE = '/listviewseparatorpage';
 }

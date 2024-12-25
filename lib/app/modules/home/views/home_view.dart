@@ -49,9 +49,9 @@ class HomeView extends GetView<HomeController> {
             ),
             ListTile(
               dense: true,
-              onTap: () {
-                Get.toNamed('/buttonrelatedwidgets');
-              },
+              // onTap: () {
+              //   Get.toNamed('/buttonrelatedwidgets');
+              // },
               title: Text(
                 'Input Fields',
                 style: Theme.of(context).textTheme.titleMedium,
@@ -84,6 +84,16 @@ class HomeView extends GetView<HomeController> {
               },
               title: Text(
                 'Page View',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/listviewbuilderpage');
+              },
+              title: Text(
+                'List View Builder',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
