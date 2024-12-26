@@ -1,42 +1,42 @@
 import 'package:get/get.dart';
 
-class ListViewBuilderPageController extends GetxController {
+class GridViewBuilderPageController extends GetxController {
   List dataList = [
     {
       "title": "Mens\'s Cloth ",
       "image": "assets/images/list_view_builder/rb_2338.png",
       'stock': 123,
-      'brand': 'zara'
+      'brand': 'Zara'
     },
     {
       "title": "Shoe Collection",
       "image": "assets/images/list_view_builder/rb_156426.png",
       'stock': 234,
-      'brand': 'ecstasy'
+      'brand': 'Ecstasy'
     },
     {
       "title": "Accessories",
       "image": "assets/images/list_view_builder/rb_2151173881.png",
       'stock': 400,
-      'brand': 'dior'
+      'brand': 'Dior'
     },
     {
       "title": "Kids Collection",
       "image": "assets/images/list_view_builder/rb_113161.png",
       'stock': 803,
-      'brand': 'bata'
+      'brand': 'Bata'
     },
     {
       "title": "Mens\'s Cloth ",
-      "image": "assets/images/list_view_builder/jewellry.png",
+      "image": "assets/images/list_view_builder/rb_2338.png",
       'stock': 23,
       'brand': 'Aarong'
     },
     {
       "title": "Shoe Collection",
-      "image": "assets/images/list_view_builder/toy.png",
+      "image": "assets/images/list_view_builder/rb_156426.png",
       'stock': 03,
-      'brand': 'abc'
+      'brand': 'Style'
     },
     {
       "title": "Accessories",

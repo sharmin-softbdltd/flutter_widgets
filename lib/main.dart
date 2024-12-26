@@ -27,7 +27,10 @@ void main() {
           titleSmall: TextStyle(
               fontSize: 12, color: Colors.black, fontWeight: FontWeight.w300),
           bodyMedium: TextStyle(
-              fontSize: 12, color: Colors.black, fontWeight: FontWeight.bold),
+            fontSize: 12,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
           bodySmall: TextStyle(
             fontSize: 12,
             color: Colors.black,

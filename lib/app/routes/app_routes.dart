@@ -14,6 +14,9 @@ abstract class Routes {
   static const LISTVIEWBUILDERPAGE = _Paths.LISTVIEWBUILDERPAGE;
   static const LISTVIEWSEPARATORPAGE = _Paths.LISTVIEWSEPARATORPAGE;
   static const GRIDVIEWPAGE = _Paths.GRIDVIEWPAGE;
+  static const GRIDVIEWBUILDERPAGE = _Paths.GRIDVIEWBUILDERPAGE;
+  static const GRIDVIEWCOUNTPAGE = _Paths.GRIDVIEWCOUNTPAGE;
+  static const GRIDVIEWEXTENTPAGE = _Paths.GRIDVIEWEXTENTPAGE;
 }
 
 abstract class _Paths {
@@ -29,4 +32,7 @@ abstract class _Paths {
   static const LISTVIEWBUILDERPAGE = '/listviewbuilderpage';
   static const LISTVIEWSEPARATORPAGE = '/listviewseparatorpage';
   static const GRIDVIEWPAGE = '/gridviewpage';
+  static const GRIDVIEWBUILDERPAGE = '/gridviewbuilderpage';
+  static const GRIDVIEWCOUNTPAGE = '/gridviewcountpage';
+  static const GRIDVIEWEXTENTPAGE = '/gridviewextentpage';
 }

@@ -97,6 +97,46 @@ class HomeView extends GetView<HomeController> {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/listviewseparatorpage');
+              },
+              title: Text(
+                'List View Separator',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/gridviewbuilderpage');
+              },
+              title: Text(
+                'Grid View Builder ',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/gridviewcountpage');
+              },
+              title: Text(
+                'Grid View Count ',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/gridviewextentpage');
+              },
+              title: Text(
+                'Grid View Extent ',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
           ],
         ),
       ),

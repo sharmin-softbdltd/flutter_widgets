@@ -4,8 +4,12 @@ import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.da
 import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
 import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
 import '../modules/drawerwidget/views/drawerwidget_view.dart';
-import '../modules/gridviewpage/bindings/gridviewpage_binding.dart';
-import '../modules/gridviewpage/views/gridviewpage_view.dart';
+import '../modules/gridviewbuilderpage/bindings/gridviewbuilderpage_binding.dart';
+import '../modules/gridviewbuilderpage/views/gridviewbuilderpage_view.dart';
+import '../modules/gridviewcountpage/bindings/gridviewcountpage_binding.dart';
+import '../modules/gridviewcountpage/views/gridviewcountpage_view.dart';
+import '../modules/gridviewextentpage/bindings/gridviewextentpage_binding.dart';
+import '../modules/gridviewextentpage/views/gridviewextentpage_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
@@ -75,9 +79,19 @@ class AppPages {
       binding: ListviewseparatorpageBinding(),
     ),
     GetPage(
-      name: _Paths.GRIDVIEWPAGE,
-      page: () => const GridviewpageView(),
-      binding: GridviewpageBinding(),
+      name: _Paths.GRIDVIEWBUILDERPAGE,
+      page: () => const GridViewPageView(),
+      binding: GridViewBuilderPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.GRIDVIEWCOUNTPAGE,
+      page: () => const GridviewcountpageView(),
+      binding: GridviewcountpageBinding(),
+    ),
+    GetPage(
+      name: _Paths.GRIDVIEWEXTENTPAGE,
+      page: () => const GridviewextentpageView(),
+      binding: GridviewextentpageBinding(),
     ),
   ];
 }
