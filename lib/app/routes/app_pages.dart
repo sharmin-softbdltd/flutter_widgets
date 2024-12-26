@@ -4,6 +4,8 @@ import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.da
 import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
 import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
 import '../modules/drawerwidget/views/drawerwidget_view.dart';
+import '../modules/formvalidation/bindings/formvalidation_binding.dart';
+import '../modules/formvalidation/views/formvalidation_view.dart';
 import '../modules/gridviewbuilderpage/bindings/gridviewbuilderpage_binding.dart';
 import '../modules/gridviewbuilderpage/views/gridviewbuilderpage_view.dart';
 import '../modules/gridviewcountpage/bindings/gridviewcountpage_binding.dart';
@@ -92,6 +94,11 @@ class AppPages {
       name: _Paths.GRIDVIEWEXTENTPAGE,
       page: () => const GridviewextentpageView(),
       binding: GridviewextentpageBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORMVALIDATION,
+      page: () => const FormvalidationView(),
+      binding: FormvalidationBinding(),
     ),
   ];
 }

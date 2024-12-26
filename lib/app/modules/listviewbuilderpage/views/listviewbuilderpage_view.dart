@@ -8,7 +8,6 @@ class ListViewBuilderPage extends GetView<ListViewBuilderPageController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<ListViewBuilderPageController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('List View Builder'),

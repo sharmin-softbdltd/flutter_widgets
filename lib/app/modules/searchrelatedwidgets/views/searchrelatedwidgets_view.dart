@@ -8,7 +8,6 @@ class SearchrelatedwidgetsView extends GetView<SearchrelatedwidgetsController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<SearchrelatedwidgetsController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text(

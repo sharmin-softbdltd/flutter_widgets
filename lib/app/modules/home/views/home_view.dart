@@ -8,7 +8,6 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<HomeController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -49,24 +48,24 @@ class HomeView extends GetView<HomeController> {
             ),
             ListTile(
               dense: true,
-              // onTap: () {
-              //   Get.toNamed('/buttonrelatedwidgets');
-              // },
-              title: Text(
-                'Input Fields',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-            ),
-            ListTile(
-              dense: true,
               onTap: () {
-                Get.toNamed('/layoutrelatedwidgets');
+                Get.toNamed('/formvalidation');
               },
               title: Text(
-                'Layout',
+                'Form Validation',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
+            // ListTile(
+            //   dense: true,
+            //   onTap: () {
+            //     Get.toNamed('/layoutrelatedwidgets');
+            //   },
+            //   title: Text(
+            //     'Layout',
+            //     style: Theme.of(context).textTheme.titleMedium,
+            //   ),
+            // ),
             ListTile(
               dense: true,
               onTap: () {

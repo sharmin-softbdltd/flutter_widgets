@@ -8,7 +8,6 @@ class GridViewPageView extends GetView<GridViewBuilderPageController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<GridViewBuilderPageController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Grid View Builder'),

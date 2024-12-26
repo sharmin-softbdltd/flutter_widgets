@@ -9,7 +9,6 @@ class PageviewwidgetView extends GetView<PageviewwidgetController> {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<PageviewwidgetController>();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Page View Widget'),
