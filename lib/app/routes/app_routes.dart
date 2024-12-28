@@ -18,6 +18,9 @@ abstract class Routes {
   static const GRIDVIEWCOUNTPAGE = _Paths.GRIDVIEWCOUNTPAGE;
   static const GRIDVIEWEXTENTPAGE = _Paths.GRIDVIEWEXTENTPAGE;
   static const FORMVALIDATION = _Paths.FORMVALIDATION;
+  static const FORMVALIDATIONTWO = _Paths.FORMVALIDATIONTWO;
+  static const FUTUREBUILDER = _Paths.FUTUREBUILDER;
+  static const HOMEPAGE = _Paths.HOMEPAGE;
 }
 
 abstract class _Paths {
@@ -37,4 +40,7 @@ abstract class _Paths {
   static const GRIDVIEWCOUNTPAGE = '/gridviewcountpage';
   static const GRIDVIEWEXTENTPAGE = '/gridviewextentpage';
   static const FORMVALIDATION = '/formvalidation';
+  static const FORMVALIDATIONTWO = '/formvalidationtwo';
+  static const FUTUREBUILDER = '/futurebuilder';
+  static const HOMEPAGE = '/homepage';
 }

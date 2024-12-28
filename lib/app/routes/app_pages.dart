@@ -6,6 +6,10 @@ import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
 import '../modules/drawerwidget/views/drawerwidget_view.dart';
 import '../modules/formvalidation/bindings/formvalidation_binding.dart';
 import '../modules/formvalidation/views/formvalidation_view.dart';
+import '../modules/formvalidationtwo/bindings/formvalidationtwo_binding.dart';
+import '../modules/formvalidationtwo/views/formvalidationtwo_view.dart';
+import '../modules/futurebuilder/bindings/futurebuilder_binding.dart';
+import '../modules/futurebuilder/views/futurebuilder_view.dart';
 import '../modules/gridviewbuilderpage/bindings/gridviewbuilderpage_binding.dart';
 import '../modules/gridviewbuilderpage/views/gridviewbuilderpage_view.dart';
 import '../modules/gridviewcountpage/bindings/gridviewcountpage_binding.dart';
@@ -99,6 +103,16 @@ class AppPages {
       name: _Paths.FORMVALIDATION,
       page: () => const FormvalidationView(),
       binding: FormvalidationBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORMVALIDATIONTWO,
+      page: () => const FormvalidationtwoView(),
+      binding: FormvalidationtwoBinding(),
+    ),
+    GetPage(
+      name: _Paths.FUTUREBUILDER,
+      page: () => const FuturebuilderView(),
+      binding: FuturebuilderBinding(),
     ),
   ];
 }

@@ -7,6 +7,7 @@ void main() {
   runApp(
     GetMaterialApp(
       theme: ThemeData(
+        useMaterial3: true,
         appBarTheme: AppBarTheme(
           iconTheme: IconThemeData(
             color: Colors.white,
@@ -44,6 +45,9 @@ void main() {
           size: 32,
         ),
         inputDecorationTheme: InputDecorationTheme(
+          errorStyle: TextStyle(
+            fontSize: 12,
+          ),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.grey),
             borderRadius: BorderRadius.circular(10),

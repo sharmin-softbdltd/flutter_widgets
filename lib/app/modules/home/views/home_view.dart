@@ -56,6 +56,16 @@ class HomeView extends GetView<HomeController> {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/formvalidationtwo');
+              },
+              title: Text(
+                'Form Validation 2',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
             // ListTile(
             //   dense: true,
             //   onTap: () {
@@ -136,12 +146,24 @@ class HomeView extends GetView<HomeController> {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
             ),
+            ListTile(
+              dense: true,
+              onTap: () {
+                Get.toNamed('/futurebuilder');
+              },
+              title: Text(
+                'Future Builder',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+            ),
           ],
         ),
       ),
-      body: Obx(() {
-        return controller.screens[controller.selectedIndex.value];
-      }),
+      body: Obx(
+        () {
+          return controller.screens[controller.selectedIndex.value];
+        },
+      ),
       bottomNavigationBar: Obx(() {
         return NavigationBar(
           indicatorColor: Colors.pink,
@@ -153,18 +175,28 @@ class HomeView extends GetView<HomeController> {
           height: 70,
           destinations: [
             NavigationDestination(
-                icon: Icon(
-                  Icons.home,
-                ),
-                label: 'Home'),
-            NavigationDestination(icon: Icon(Icons.shop), label: 'Shop'),
+              icon: Icon(
+                Icons.home,
+              ),
+              label: 'Home',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.shop),
+              label: 'Shop',
+            ),
             NavigationDestination(
                 icon: Icon(
                   Icons.add_a_photo_rounded,
                 ),
                 label: 'Add'),
-            NavigationDestination(icon: Icon(Icons.rocket), label: 'Discover'),
-            NavigationDestination(icon: Icon(Icons.settings), label: 'Setting'),
+            NavigationDestination(
+              icon: Icon(Icons.rocket),
+              label: 'Discover',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.settings),
+              label: 'Setting',
+            ),
           ],
         );
       }),
