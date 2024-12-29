@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import '../controllers/futurebuilder_controller.dart';
+import 'futurebuilder_controller.dart';
 
 class FuturebuilderView extends GetView<FuturebuilderController> {
   const FuturebuilderView({super.key});

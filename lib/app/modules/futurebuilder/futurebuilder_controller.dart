@@ -15,7 +15,6 @@ class FuturebuilderController extends GetxController {
       if (data['cod'] != '200') {
         throw 'An unknown error occur';
       }
-
       return data;
     } catch (e) {
       throw e.toString();

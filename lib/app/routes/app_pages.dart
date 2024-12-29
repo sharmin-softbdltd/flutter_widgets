@@ -2,14 +2,16 @@ import 'package:get/get.dart';
 
 import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.dart';
 import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
+import '../modules/date_picker/date_picker_binding.dart';
+import '../modules/date_picker/date_picker_view.dart';
 import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
 import '../modules/drawerwidget/views/drawerwidget_view.dart';
 import '../modules/formvalidation/bindings/formvalidation_binding.dart';
 import '../modules/formvalidation/views/formvalidation_view.dart';
-import '../modules/formvalidationtwo/bindings/formvalidationtwo_binding.dart';
-import '../modules/formvalidationtwo/views/formvalidationtwo_view.dart';
-import '../modules/futurebuilder/bindings/futurebuilder_binding.dart';
-import '../modules/futurebuilder/views/futurebuilder_view.dart';
+import '../modules/formvalidationtwo/formvalidationtwo_binding.dart';
+import '../modules/formvalidationtwo/formvalidationtwo_view.dart';
+import '../modules/futurebuilder/futurebuilder_binding.dart';
+import '../modules/futurebuilder/futurebuilder_view.dart';
 import '../modules/gridviewbuilderpage/bindings/gridviewbuilderpage_binding.dart';
 import '../modules/gridviewbuilderpage/views/gridviewbuilderpage_view.dart';
 import '../modules/gridviewcountpage/bindings/gridviewcountpage_binding.dart';
@@ -113,6 +115,11 @@ class AppPages {
       name: _Paths.FUTUREBUILDER,
       page: () => const FuturebuilderView(),
       binding: FuturebuilderBinding(),
+    ),
+    GetPage(
+      name: _Paths.DATE_PICKER,
+      page: () => const DatePickerView(),
+      binding: DatePickerBinding(),
     ),
   ];
 }

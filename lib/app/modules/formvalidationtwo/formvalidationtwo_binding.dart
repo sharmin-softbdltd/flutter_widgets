@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/formvalidationtwo_controller.dart';
+import 'formvalidationtwo_controller.dart';
 
 class FormvalidationtwoBinding extends Bindings {
   @override

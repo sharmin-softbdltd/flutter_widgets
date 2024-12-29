@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_widgets/app/utils/constrant.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -28,9 +29,7 @@ class FormvalidationView extends GetView<FormvalidationController> {
                     .titleLarge!
                     .copyWith(color: Colors.black),
               ),
-              SizedBox(
-                height: 20,
-              ),
+              customHeight,
               Form(
                 key: controller.formKey,
                 child: Column(

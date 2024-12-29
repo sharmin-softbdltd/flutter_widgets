@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'app/routes/app_pages.dart';
+import 'app/utils/constrant.dart';
 
 void main() {
   runApp(
@@ -20,27 +21,7 @@ void main() {
             color: Colors.white,
           ),
         ),
-        textTheme: TextTheme(
-          titleLarge: TextStyle(
-              fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
-          titleMedium: TextStyle(
-              fontSize: 14, color: Colors.white, fontWeight: FontWeight.bold),
-          titleSmall: TextStyle(
-              fontSize: 12, color: Colors.black, fontWeight: FontWeight.w300),
-          bodyMedium: TextStyle(
-            fontSize: 12,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-          bodySmall: TextStyle(
-            fontSize: 12,
-            color: Colors.black,
-          ),
-          labelSmall: TextStyle(
-            fontSize: 12,
-            color: Colors.black,
-          ),
-        ),
+        textTheme: themeConst,
         iconTheme: IconThemeData(
           size: 32,
         ),
@@ -67,6 +48,7 @@ void main() {
       title: "Flutter Widgets",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      // initialBinding: ,
     ),
   );
 }

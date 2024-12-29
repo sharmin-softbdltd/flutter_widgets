@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:intl/intl.dart';
 
 class FormvalidationtwoController extends GetxController {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -10,7 +12,8 @@ class FormvalidationtwoController extends GetxController {
   final phone = TextEditingController();
   final password = TextEditingController();
   final passwordConfirmation = TextEditingController();
-  final dateOfBirth = TextEditingController();
+
+  // final date = TextEditingController();
   final currentTime = TextEditingController();
 
   Rx<bool> isDataValidate = false.obs;
@@ -18,9 +21,15 @@ class FormvalidationtwoController extends GetxController {
   Rx<bool> hideConfirmPassword = true.obs;
   Rx<bool> privacyAndTerm = true.obs;
 
+  // Rxn<File> selectedImage = Rxn<File>();
+  // File? selectedImage;
+  Rx<String> imagePath = ''.obs;
+  Rx<String> date = ''.obs;
+
   @override
   void onInit() {
     super.onInit();
+    setCurrentTime();
   }
 
   // NAME VALIDATION
@@ -41,7 +50,7 @@ class FormvalidationtwoController extends GetxController {
     final regexForEmail = RegExp(r'^[A-Za-z0-9._]+@[A-Za-z]+\.[a-zA-Z]{3}$');
 
     if (!regexForEmail.hasMatch(value)) {
-      return '$fieldName is not a valid phone number.';
+      return '$fieldName is not a valid Email.';
     }
     return null;
   }
@@ -84,6 +93,43 @@ class FormvalidationtwoController extends GetxController {
       return 'Password does not match';
     }
     return null;
+  }
+
+  //FOR OPENING DATE PICKER
+  void selectDate(BuildContext context) async {
+    debugPrint('clicked');
+    DateTime? pickedDate = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2011),
+      lastDate: DateTime(2030),
+    );
+
+    if (pickedDate != null) {
+      // date.text = DateFormat('yyyy-MM-dd').format(selectedDate);
+
+      String formattedDate = "${pickedDate.toLocal()}".split(' ')[0];
+      date.value = formattedDate;
+      debugPrint(' selected date is = ${date.value}');
+    }
+  }
+
+  Future selectImage({ImageSource source = ImageSource.camera}) async {
+    final pickedImage = await ImagePicker().pickImage(source: source);
+
+    if (pickedImage != null) {
+      imagePath.value = pickedImage.path.toString();
+      debugPrint('image is = ${imagePath.value}');
+    }
+  }
+
+  void setCurrentTime() {
+    final String foramttedTime = DateFormat('hh:mm a').format(DateTime.now());
+    currentTime.text = foramttedTime;
+  }
+
+  void clearTime() {
+    currentTime.clear();
   }
 
   void signup() {

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/futurebuilder_controller.dart';
+import 'futurebuilder_controller.dart';
 
 class FuturebuilderBinding extends Bindings {
   @override

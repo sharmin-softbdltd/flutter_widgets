@@ -21,6 +21,7 @@ abstract class Routes {
   static const FORMVALIDATIONTWO = _Paths.FORMVALIDATIONTWO;
   static const FUTUREBUILDER = _Paths.FUTUREBUILDER;
   static const HOMEPAGE = _Paths.HOMEPAGE;
+  static const DATE_PICKER = _Paths.DATE_PICKER;
 }
 
 abstract class _Paths {
@@ -43,4 +44,5 @@ abstract class _Paths {
   static const FORMVALIDATIONTWO = '/formvalidationtwo';
   static const FUTUREBUILDER = '/futurebuilder';
   static const HOMEPAGE = '/homepage';
+  static const DATE_PICKER = '/date-picker';
 }
