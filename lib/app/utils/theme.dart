@@ -32,6 +32,7 @@ final lightThemeConst = ThemeData(
   iconTheme: IconThemeData(
     size: 32,
   ),
+  datePickerTheme: DatePickerThemeData(),
   inputDecorationTheme: InputDecorationTheme(
     errorStyle: TextStyle(
       fontSize: 12,

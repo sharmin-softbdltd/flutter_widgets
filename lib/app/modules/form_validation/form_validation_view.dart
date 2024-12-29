@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_widgets/app/utils/constrant.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../utils/constant.dart';
 import 'form_validation_controller.dart';
 
 class FormValidationView extends GetView<FormValidationController> {
@@ -60,9 +60,7 @@ class FormValidationView extends GetView<FormValidationController> {
                             ),
                           ),
                         ),
-                        SizedBox(
-                          width: 20,
-                        ),
+                        customWidth,
                         Expanded(
                           child: TextFormField(
                             controller: controller.lastName,
@@ -72,7 +70,10 @@ class FormValidationView extends GetView<FormValidationController> {
                               return controller.validateNameField(
                                   'Last Name', value);
                             },
+                            style: Theme.of(context).textTheme.labelMedium,
                             decoration: InputDecoration(
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(10)),
                               prefixIcon: Icon(
                                 Icons.person,
                                 size: 18,
@@ -86,10 +87,9 @@ class FormValidationView extends GetView<FormValidationController> {
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     TextFormField(
+                      style: Theme.of(context).textTheme.labelMedium,
                       controller: controller.userName,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
@@ -106,10 +106,9 @@ class FormValidationView extends GetView<FormValidationController> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     TextFormField(
+                      style: Theme.of(context).textTheme.labelMedium,
                       controller: controller.email,
                       validator: (value) {
                         return controller.validateEmailField('Email', value);
@@ -127,10 +126,9 @@ class FormValidationView extends GetView<FormValidationController> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     TextFormField(
+                      style: Theme.of(context).textTheme.labelMedium,
                       controller: controller.phone,
                       validator: (value) {
                         return controller.validatePhoneField('Phone', value);
@@ -151,11 +149,10 @@ class FormValidationView extends GetView<FormValidationController> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     Obx(() {
                       return TextFormField(
+                        style: Theme.of(context).textTheme.labelMedium,
                         controller: controller.password,
                         obscureText: controller.hidePassword.value,
                         validator: (value) {
@@ -187,9 +184,7 @@ class FormValidationView extends GetView<FormValidationController> {
                         ),
                       );
                     }),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     Row(
                       children: [
                         SizedBox(
@@ -208,9 +203,7 @@ class FormValidationView extends GetView<FormValidationController> {
                             },
                           ),
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
+                        customWidth,
                         RichText(
                           text: TextSpan(
                             children: [
@@ -219,23 +212,19 @@ class FormValidationView extends GetView<FormValidationController> {
                                   style: Theme.of(context).textTheme.bodySmall),
                               TextSpan(
                                   text: ' Privacy Policy',
-                                  style:
-                                      Theme.of(context).textTheme.bodyMedium),
+                                  style: Theme.of(context).textTheme.bodySmall),
                               TextSpan(
                                   text: ' and ',
                                   style: Theme.of(context).textTheme.bodySmall),
                               TextSpan(
                                   text: ' Terms & Conditions',
-                                  style:
-                                      Theme.of(context).textTheme.bodyMedium),
+                                  style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),
                         )
                       ],
                     ),
-                    SizedBox(
-                      height: 20,
-                    ),
+                    customHeight,
                     SizedBox(
                       width: Get.width,
                       child: Obx(

@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
 
-import '../../utils/constrant.dart';
+import '../../utils/constant.dart';
 import 'form_validation_two_controller.dart';
 
 class FormValidationTwoView extends GetView<FormValidationTwoController> {

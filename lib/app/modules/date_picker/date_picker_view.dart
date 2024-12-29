@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/app/utils/constrant.dart';
 import 'package:get/get.dart';
 
+import '../../utils/constant.dart';
 import 'date_picker_controller.dart';
 
 class DatePickerView extends GetView<DatePickerController> {

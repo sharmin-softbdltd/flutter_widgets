@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class FormValidationController extends GetxController {
@@ -10,9 +10,9 @@ class FormValidationController extends GetxController {
   final phone = TextEditingController();
   final password = TextEditingController();
 
-  Rx<bool> isDataValidate = false.obs;
-  Rx<bool> hidePassword = true.obs;
-  Rx<bool> privacyAndTerm = true.obs;
+  final isDataValidate = false.obs;
+  final hidePassword = true.obs;
+  final privacyAndTerm = true.obs;
 
   @override
   void onInit() {
@@ -98,6 +98,30 @@ class FormValidationController extends GetxController {
   }
 
   void signupForm() {
-    if (formKey.currentState!.validate()) {}
+    if (formKey.currentState!.validate()) {
+      Get.bottomSheet(
+        isDismissible: true,
+        backgroundColor: Colors.transparent,
+        Container(
+          color: Colors.white,
+          padding: EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(
+                Icons.check_circle,
+                color: Colors.green,
+                size: 14,
+              ),
+              SizedBox(width: 8),
+              Text(
+                "Form Submitted Successfully!",
+                style: Theme.of(Get.context!).textTheme.bodySmall,
+              ),
+            ],
+          ),
+        ),
+      );
+    }
   }
 }
