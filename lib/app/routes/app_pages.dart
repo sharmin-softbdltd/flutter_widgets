@@ -1,37 +1,37 @@
 import 'package:get/get.dart';
 
-import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.dart';
-import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
+import '../modules/button_related_widgets/button_related_widgets_binding.dart';
+import '../modules/button_related_widgets/button_related_widgets_view.dart';
 import '../modules/date_picker/date_picker_binding.dart';
 import '../modules/date_picker/date_picker_view.dart';
-import '../modules/drawerwidget/bindings/drawerwidget_binding.dart';
-import '../modules/drawerwidget/views/drawerwidget_view.dart';
-import '../modules/formvalidation/bindings/formvalidation_binding.dart';
-import '../modules/formvalidation/views/formvalidation_view.dart';
-import '../modules/formvalidationtwo/formvalidationtwo_binding.dart';
-import '../modules/formvalidationtwo/formvalidationtwo_view.dart';
-import '../modules/futurebuilder/futurebuilder_binding.dart';
-import '../modules/futurebuilder/futurebuilder_view.dart';
-import '../modules/gridviewbuilderpage/bindings/gridviewbuilderpage_binding.dart';
-import '../modules/gridviewbuilderpage/views/gridviewbuilderpage_view.dart';
-import '../modules/gridviewcountpage/bindings/gridviewcountpage_binding.dart';
-import '../modules/gridviewcountpage/views/gridviewcountpage_view.dart';
-import '../modules/gridviewextentpage/bindings/gridviewextentpage_binding.dart';
-import '../modules/gridviewextentpage/views/gridviewextentpage_view.dart';
-import '../modules/home/bindings/home_binding.dart';
-import '../modules/home/views/home_view.dart';
-import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
-import '../modules/layoutrelatedwidgets/views/layoutrelatedwidgets_view.dart';
-import '../modules/listviewbuilderpage/bindings/listviewbuilderpage_binding.dart';
-import '../modules/listviewbuilderpage/views/listviewbuilderpage_view.dart';
-import '../modules/listviewseparatorpage/bindings/listviewseparatorpage_binding.dart';
-import '../modules/listviewseparatorpage/views/listviewseparatorpage_view.dart';
-import '../modules/pageviewwidget/bindings/pageviewwidget_binding.dart';
-import '../modules/pageviewwidget/views/pageviewwidget_view.dart';
-import '../modules/searchrelatedwidgets/bindings/searchrelatedwidgets_binding.dart';
-import '../modules/searchrelatedwidgets/views/searchrelatedwidgets_view.dart';
-import '../modules/textrelatedwidgets/bindings/textrelatedwidgets_binding.dart';
-import '../modules/textrelatedwidgets/views/textrelatedwidgets_view.dart';
+import '../modules/drawer_widget/drawer_widget_binding.dart';
+import '../modules/drawer_widget/drawer_widget_view.dart';
+import '../modules/form_validation/form_validation_binding.dart';
+import '../modules/form_validation/form_validation_view.dart';
+import '../modules/form_validation_two/form_validation_two_binding.dart';
+import '../modules/form_validation_two/form_validation_two_view.dart';
+import '../modules/future_builder/future_builder_binding.dart';
+import '../modules/future_builder/future_builder_view.dart';
+import '../modules/grid_view_builder_page/grid_view_builder_page_binding.dart';
+import '../modules/grid_view_builder_page/grid_view_builder_page_view.dart';
+import '../modules/grid_view_count_page/grid_view_count_page_binding.dart';
+import '../modules/grid_view_count_page/grid_view_count_page_view.dart';
+import '../modules/grid_view_extent_page/grid_view_extent_page_binding.dart';
+import '../modules/grid_view_extent_page/grid_view_extent_page_view.dart';
+import '../modules/home/home_binding.dart';
+import '../modules/home/home_view.dart';
+import '../modules/layout_related_widgets/layout_related_widgets_binding.dart';
+import '../modules/layout_related_widgets/layout_related_widgets_view.dart';
+import '../modules/list_view_builder_page/list_view_builder_page_binding.dart';
+import '../modules/list_view_builder_page/list_view_builder_page_view.dart';
+import '../modules/list_view_separator_page/list_view_separator_page_binding.dart';
+import '../modules/list_view_separator_page/list_view_separator_page_view.dart';
+import '../modules/page_view_widget/page_view_widget_binding.dart';
+import '../modules/page_view_widget/page_view_widget_view.dart';
+import '../modules/search_related_widgets/search_related_widgets_binding.dart';
+import '../modules/search_related_widgets/search_related_widgets_view.dart';
+import '../modules/text_related_widgets/text_related_widgets_binding.dart';
+import '../modules/text_related_widgets/text_related_widgets_view.dart';
 
 part 'app_routes.dart';
 
@@ -48,33 +48,33 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TEXTRELATEDWIDGETS,
-      page: () => const TextrelatedwidgetsView(),
-      binding: TextrelatedwidgetsBinding(),
+      page: () => const TextRelatedWidgetsView(),
+      binding: TextRelatedWidgetsBinding(),
     ),
     GetPage(
       name: _Paths.BUTTONRELATEDWIDGETS,
-      page: () => const ButtonrelatedwidgetsView(),
-      binding: ButtonrelatedwidgetsBinding(),
+      page: () => const ButtonRelatedWidgetsView(),
+      binding: ButtonRelatedWidgetsBinding(),
     ),
     GetPage(
       name: _Paths.SEARCHRELATEDWIDGETS,
-      page: () => const SearchrelatedwidgetsView(),
-      binding: SearchrelatedwidgetsBinding(),
+      page: () => const SearchRelatedWidgetsView(),
+      binding: SearchRelatedWidgetsBinding(),
     ),
     GetPage(
       name: _Paths.DRAWERWIDGET,
-      page: () => const DrawerwidgetView(),
-      binding: DrawerwidgetBinding(),
+      page: () => const DrawerWidgetView(),
+      binding: DrawerWidgetBinding(),
     ),
     GetPage(
       name: _Paths.LAYOUTRELATEDWIDGETS,
-      page: () => const LayoutrelatedwidgetsView(),
-      binding: LayoutrelatedwidgetsBinding(),
+      page: () => const LayoutRelatedWidgetsView(),
+      binding: LayoutRelatedWidgetsBinding(),
     ),
     GetPage(
       name: _Paths.PAGEVIEWWIDGET,
-      page: () => const PageviewwidgetView(),
-      binding: PageviewwidgetBinding(),
+      page: () => const PageViewWidgetView(),
+      binding: PageViewWidgetBinding(),
     ),
     GetPage(
       name: _Paths.LISTVIEWBUILDERPAGE,
@@ -83,8 +83,8 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.LISTVIEWSEPARATORPAGE,
-      page: () => const ListviewseparatorpageView(),
-      binding: ListviewseparatorpageBinding(),
+      page: () => const ListViewSeparatorPageView(),
+      binding: ListViewSeparatorPageBinding(),
     ),
     GetPage(
       name: _Paths.GRIDVIEWBUILDERPAGE,
@@ -93,28 +93,28 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.GRIDVIEWCOUNTPAGE,
-      page: () => const GridviewcountpageView(),
-      binding: GridviewcountpageBinding(),
+      page: () => const GridViewCountPageView(),
+      binding: GridViewCountPageBinding(),
     ),
     GetPage(
       name: _Paths.GRIDVIEWEXTENTPAGE,
-      page: () => const GridviewextentpageView(),
-      binding: GridviewextentpageBinding(),
+      page: () => const GridViewExtentPageView(),
+      binding: GridViewExtentPageBinding(),
     ),
     GetPage(
       name: _Paths.FORMVALIDATION,
-      page: () => const FormvalidationView(),
-      binding: FormvalidationBinding(),
+      page: () => const FormValidationView(),
+      binding: FormValidationBinding(),
     ),
     GetPage(
       name: _Paths.FORMVALIDATIONTWO,
-      page: () => const FormvalidationtwoView(),
-      binding: FormvalidationtwoBinding(),
+      page: () => const FormValidationTwoView(),
+      binding: FormValidationTwoBinding(),
     ),
     GetPage(
       name: _Paths.FUTUREBUILDER,
-      page: () => const FuturebuilderView(),
-      binding: FuturebuilderBinding(),
+      page: () => const FutureBuilderView(),
+      binding: FutureBuilderBinding(),
     ),
     GetPage(
       name: _Paths.DATE_PICKER,
