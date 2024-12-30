@@ -135,6 +135,7 @@ class FormvalidationtwoView extends GetView<FormvalidationtwoController> {
                           onTap: () {
                             controller.selectDate(context);
                           },
+                          controller: controller.dateController,
                           readOnly: true,
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           decoration: InputDecoration(

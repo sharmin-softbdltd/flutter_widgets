@@ -36,6 +36,17 @@ class HomeView extends GetView<HomeController> {
           ListTile(
             dense: true,
             onTap: () {
+              Get.toNamed('/products-page');
+            },
+            hoverColor: Colors.white70,
+            title: Text(
+              'Products Page',
+              style: Theme.of(context).textTheme.titleMedium,
+            ),
+          ),
+          ListTile(
+            dense: true,
+            onTap: () {
               Get.toNamed('/buttonrelatedwidgets');
             },
             hoverColor: Colors.white70,

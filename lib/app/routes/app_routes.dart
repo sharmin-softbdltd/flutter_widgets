@@ -22,6 +22,9 @@ abstract class Routes {
   static const FUTUREBUILDER = _Paths.FUTUREBUILDER;
   static const HOMEPAGE = _Paths.HOMEPAGE;
   static const DATE_PICKER = _Paths.DATE_PICKER;
+  static const PRODUCTS_PAGE = _Paths.PRODUCTS_PAGE;
+  static const ITEM_DETAILS = _Paths.ITEM_DETAILS;
+  static const ADD_EDIT_ITEM = _Paths.ADD_EDIT_ITEM;
 }
 
 abstract class _Paths {
@@ -45,4 +48,7 @@ abstract class _Paths {
   static const FUTUREBUILDER = '/futurebuilder';
   static const HOMEPAGE = '/homepage';
   static const DATE_PICKER = '/date-picker';
+  static const PRODUCTS_PAGE = '/products-page';
+  static const ITEM_DETAILS = '/item-details';
+  static const ADD_EDIT_ITEM = '/add-edit-item';
 }

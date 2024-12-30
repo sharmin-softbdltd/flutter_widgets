@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/add_edit_item/add_edit_item_binding.dart';
+import '../modules/add_edit_item/add_edit_item_view.dart';
 import '../modules/buttonrelatedwidgets/bindings/buttonrelatedwidgets_binding.dart';
 import '../modules/buttonrelatedwidgets/views/buttonrelatedwidgets_view.dart';
 import '../modules/date_picker/date_picker_binding.dart';
@@ -20,6 +22,8 @@ import '../modules/gridviewextentpage/bindings/gridviewextentpage_binding.dart';
 import '../modules/gridviewextentpage/views/gridviewextentpage_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/item_details/item_details_binding.dart';
+import '../modules/item_details/item_details_view.dart';
 import '../modules/layoutrelatedwidgets/bindings/layoutrelatedwidgets_binding.dart';
 import '../modules/layoutrelatedwidgets/views/layoutrelatedwidgets_view.dart';
 import '../modules/listviewbuilderpage/bindings/listviewbuilderpage_binding.dart';
@@ -28,6 +32,8 @@ import '../modules/listviewseparatorpage/bindings/listviewseparatorpage_binding.
 import '../modules/listviewseparatorpage/views/listviewseparatorpage_view.dart';
 import '../modules/pageviewwidget/bindings/pageviewwidget_binding.dart';
 import '../modules/pageviewwidget/views/pageviewwidget_view.dart';
+import '../modules/products_page/products_page_binding.dart';
+import '../modules/products_page/products_page_view.dart';
 import '../modules/searchrelatedwidgets/bindings/searchrelatedwidgets_binding.dart';
 import '../modules/searchrelatedwidgets/views/searchrelatedwidgets_view.dart';
 import '../modules/textrelatedwidgets/bindings/textrelatedwidgets_binding.dart';
@@ -120,6 +126,21 @@ class AppPages {
       name: _Paths.DATE_PICKER,
       page: () => const DatePickerView(),
       binding: DatePickerBinding(),
+    ),
+    GetPage(
+      name: _Paths.PRODUCTS_PAGE,
+      page: () => const ProductsPageView(),
+      binding: ProductsPageBinding(),
+    ),
+    GetPage(
+      name: _Paths.ITEM_DETAILS,
+      page: () => const ItemDetailsView(),
+      binding: ItemDetailsBinding(),
+    ),
+    GetPage(
+      name: _Paths.ADD_EDIT_ITEM,
+      page: () => const AddEditItemView(),
+      binding: AddEditItemBinding(),
     ),
   ];
 }

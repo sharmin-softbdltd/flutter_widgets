@@ -13,7 +13,7 @@ class FormvalidationtwoController extends GetxController {
   final password = TextEditingController();
   final passwordConfirmation = TextEditingController();
 
-  // final date = TextEditingController();
+  final dateController = TextEditingController();
   final currentTime = TextEditingController();
 
   Rx<bool> isDataValidate = false.obs;
@@ -24,7 +24,7 @@ class FormvalidationtwoController extends GetxController {
   // Rxn<File> selectedImage = Rxn<File>();
   // File? selectedImage;
   Rx<String> imagePath = ''.obs;
-  Rx<String> date = ''.obs;
+  final date = ''.obs;
 
   @override
   void onInit() {
@@ -110,6 +110,7 @@ class FormvalidationtwoController extends GetxController {
 
       String formattedDate = "${pickedDate.toLocal()}".split(' ')[0];
       date.value = formattedDate;
+      dateController.text = formattedDate;
       debugPrint(' selected date is = ${date.value}');
     }
   }

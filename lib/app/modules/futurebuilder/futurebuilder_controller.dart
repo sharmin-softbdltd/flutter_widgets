@@ -1,7 +1,7 @@
-import 'dart:convert';
-
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+
+import '../../models/weather_data_model.dart';
 
 class FuturebuilderController extends GetxController {
   Future getWeather() async {
@@ -10,9 +10,9 @@ class FuturebuilderController extends GetxController {
       final response = await http.get(Uri.parse(
           'http://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=616d43e8b133e01a793a7c9f4ccd37d9'));
 
-      final data = jsonDecode(response.body);
+      final data = weatherDataModelFromJson(response.body.toString());
 
-      if (data['cod'] != '200') {
+      if (data.cod != '200') {
         throw 'An unknown error occur';
       }
       return data;

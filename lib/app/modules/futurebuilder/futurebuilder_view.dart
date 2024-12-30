@@ -43,15 +43,15 @@ class FuturebuilderView extends GetView<FuturebuilderController> {
             );
           }
 
-          final data = snapshot.data!;
-          final firstList = data['list'][0];
+          final weatherData = snapshot.data!;
+          final firstList = weatherData.list[0];
           // DATA FOR MAIN CARD
-          final currentTemp = ((firstList['main']['temp']) - 273.15).round();
-          final currentSky = firstList["weather"][0]['main'];
+          final currentTemp = ((firstList.main.temp) - 273.15).round();
+          final currentSky = firstList.weather[0].main;
           // DATA FOR ADDITIONAL INFORMATION
-          final currentPressure = firstList['main']['pressure'];
-          final currentWindSpeed = firstList['wind']['speed'];
-          final currentHumidity = firstList['main']['humidity'];
+          final currentPressure = firstList.main.pressure;
+          final currentWindSpeed = firstList.wind.speed;
+          final currentHumidity = firstList.main.humidity;
 
           return Padding(
             padding: const EdgeInsets.all(16.0),
@@ -81,11 +81,10 @@ class FuturebuilderView extends GetView<FuturebuilderController> {
                     itemCount: 8,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      final hourlyForecast = data['list'][index + 1];
-                      final hourlySky = hourlyForecast['weather'][0]['main'];
-                      final hourlyTemp =
-                          hourlyForecast['main']['temp'].toString();
-                      final time = DateTime.parse(hourlyForecast['dt_txt']);
+                      final hourlyForecast = weatherData.list[index + 1];
+                      final hourlySky = hourlyForecast.weather[0].main;
+                      final hourlyTemp = hourlyForecast.main.temp.toString();
+                      final time = DateTime.parse(hourlyForecast.dtTxt);
                       return HourlyForcastItem(
                         //00:30
                         DateFormat.j().format(time),
