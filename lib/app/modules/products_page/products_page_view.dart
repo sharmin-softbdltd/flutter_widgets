@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widgets/app/modules/products_page/products_page_controller.dart';
-import 'package:flutter_widgets/app/utils/constrant.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+
+import '../../utils/constant.dart';
 
 class ProductsPageView extends GetView<ProductsPageController> {
   const ProductsPageView({super.key});

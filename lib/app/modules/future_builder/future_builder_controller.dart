@@ -3,6 +3,8 @@ import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
+import '../../models/weather_data_model.dart';
+
 class FutureBuilderController extends GetxController {
   Future getWeather() async {
     try {

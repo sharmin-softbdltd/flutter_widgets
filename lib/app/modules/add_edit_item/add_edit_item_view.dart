@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../../utils/constrant.dart';
+import '../../utils/constant.dart';
 import 'add_edit_item_controller.dart';
 
 class AddEditItemView extends GetView<AddEditItemController> {
