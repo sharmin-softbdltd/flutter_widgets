@@ -85,16 +85,7 @@ class ProductsPageView extends GetView<ProductsPageController> {
               );
       }),
       floatingActionButton: TextButton(
-        onPressed: () {
-          // Get.toNamed('/add-edit-item',  arguments: {
-          //   'isEdit': true,
-          //   'appBarTitle': 'Add Item',
-          //   // 'date': date,
-          //   // 'price': itemPrice,
-          //   // 'name': itemName,
-          //   // 'description': itemDescription,
-          // });
-        },
+        onPressed: () {},
         style: TextButton.styleFrom(backgroundColor: Colors.pink),
         child: Text(
           'Add',
@@ -130,7 +121,7 @@ class ProductsPageView extends GetView<ProductsPageController> {
             });
           },
           child: Container(
-            height: 150,
+            height: Get.height * 0.5,
             width: Get.width * 0.4,
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
