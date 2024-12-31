@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_widgets/app/models/products/get_item_list_model.dart';
+import 'package:flutter_widgets/app/models/simple_status_model.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class ProductsPageController extends GetxController {
-  final isDeleting = false.obs;
   final productList = <Data>[].obs;
+  final isDeleting = false.obs;
+  final isDataLoaded = false.obs;
+  final selectedItem = Data().obs;
 
   @override
   void onInit() {
@@ -14,6 +16,8 @@ class ProductsPageController extends GetxController {
   }
 
   void fetchItemList() async {
+    isDataLoaded.value = false;
+
     final response = await http.get(
         Uri.parse('https://vocabulary-backend-fm6a.onrender.com/api/items'));
 
@@ -21,17 +25,19 @@ class ProductsPageController extends GetxController {
     // final data = jsonDecode(response.body);
 
     GetItemListModel model = getItemListModelFromJson(response.body);
+
     if (model.status ?? false) {
       productList.value = model.data ?? [];
     } else {
       Get.snackbar('Failed',
           model.message ?? "Something went wrong. Please try again later.");
     }
+    isDataLoaded.value = true;
   }
 
-  Future<void> deleteItem(String itemId) async {
+  void deleteItem(int index) async {
     final url =
-        'https://vocabulary-backend-fm6a.onrender.com/api/items/$itemId'; // API endpoint
+        'https://vocabulary-backend-fm6a.onrender.com/api/items/${productList[index].id}'; // API endpoint
 
     try {
       isDeleting.value = true;
@@ -39,11 +45,15 @@ class ProductsPageController extends GetxController {
         'Content-Type': 'application/json',
       });
 
-      if (response.statusCode == 200) {
-        Navigator.of(Get.context!).pop(); // Close the dialog
+      SimpleStatusModel model = simpleStatusModelFromJson(response.body);
 
-        Get.snackbar('Success', 'Item deleted successfully!');
-        Get.back(); // Navigate back to the previous page
+      if (response.statusCode == 200) {
+        if (model.status ?? false) {
+          Get.snackbar('Success', 'Item deleted successfully!');
+          productList.removeAt(index);
+        } else {
+          Get.snackbar('Error', 'Failed to delete item: ${response.body}');
+        }
       } else {
         Get.snackbar('Error', 'Failed to delete item: ${response.body}');
       }

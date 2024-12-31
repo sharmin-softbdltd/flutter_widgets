@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/add_edit_item/add_edit_item_binding.dart';
-import '../modules/add_edit_item/add_edit_item_view.dart';
 import '../modules/button_related_widgets/button_related_widgets_binding.dart';
 import '../modules/button_related_widgets/button_related_widgets_view.dart';
 import '../modules/date_picker/date_picker_binding.dart';
@@ -22,8 +20,6 @@ import '../modules/grid_view_extent_page/grid_view_extent_page_binding.dart';
 import '../modules/grid_view_extent_page/grid_view_extent_page_view.dart';
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
-import '../modules/item_details/item_details_binding.dart';
-import '../modules/item_details/item_details_view.dart';
 import '../modules/layout_related_widgets/layout_related_widgets_binding.dart';
 import '../modules/layout_related_widgets/layout_related_widgets_view.dart';
 import '../modules/list_view_builder_page/list_view_builder_page_binding.dart';
@@ -32,8 +28,12 @@ import '../modules/list_view_separator_page/list_view_separator_page_binding.dar
 import '../modules/list_view_separator_page/list_view_separator_page_view.dart';
 import '../modules/page_view_widget/page_view_widget_binding.dart';
 import '../modules/page_view_widget/page_view_widget_view.dart';
-import '../modules/products_page/products_page_binding.dart';
-import '../modules/products_page/products_page_view.dart';
+import '../modules/product/add_edit_item/add_edit_item_binding.dart';
+import '../modules/product/add_edit_item/add_edit_item_view.dart';
+import '../modules/product/item_details/item_details_binding.dart';
+import '../modules/product/item_details/item_details_view.dart';
+import '../modules/product/products_page/products_page_binding.dart';
+import '../modules/product/products_page/products_page_view.dart';
 import '../modules/search_related_widgets/search_related_widgets_binding.dart';
 import '../modules/search_related_widgets/search_related_widgets_view.dart';
 import '../modules/text_related_widgets/text_related_widgets_binding.dart';

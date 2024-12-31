@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_widgets/app/modules/products_page/products_page_controller.dart';
+import 'package:flutter_widgets/app/modules/product/products_page/products_page_controller.dart';
+import 'package:flutter_widgets/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-import '../../utils/constant.dart';
+import '../../../utils/constant.dart';
 
 class ProductsPageView extends GetView<ProductsPageController> {
   const ProductsPageView({super.key});
@@ -86,7 +87,15 @@ class ProductsPageView extends GetView<ProductsPageController> {
       }),*/
       body: itemListDesign(),
       floatingActionButton: TextButton(
-        onPressed: () {},
+        onPressed: () async {
+          Get.toNamed(Routes.ADD_EDIT_ITEM);
+
+          /*var result  = await Get.toNamed(Routes.ADD_EDIT_ITEM);
+          debugPrint('build Result:  ${result}');
+          if (result) {
+            controller.fetchItemList();
+          }*/
+        },
         style: TextButton.styleFrom(backgroundColor: Colors.pink),
         child: Text(
           'Add',
@@ -102,6 +111,7 @@ class ProductsPageView extends GetView<ProductsPageController> {
   //GRID DESIGN
   Widget gridDesign(
     BuildContext context,
+    int index,
     String itemName,
     int itemPrice,
     String date,
@@ -113,13 +123,15 @@ class ProductsPageView extends GetView<ProductsPageController> {
       children: [
         GestureDetector(
           onTap: () {
-            Get.toNamed('/item-details', arguments: {
+            controller.selectedItem.value = controller.productList[index];
+            Get.toNamed(Routes.ITEM_DETAILS);
+            /*Get.toNamed('/item-details', arguments: {
               'itemId': itemId,
               'date': date,
               'price': itemPrice,
               'name': itemName,
               'description': itemDescription,
-            });
+            });*/
           },
           child: Container(
             height: Get.height * 0.5,
@@ -184,7 +196,7 @@ class ProductsPageView extends GetView<ProductsPageController> {
             ),
             child: IconButton(
               onPressed: () {
-                showDeleteConfirmationDialog(context, itemId);
+                showDeleteConfirmationDialog(context, itemId, index);
               },
               icon: Icon(
                 Icons.clear,
@@ -197,7 +209,9 @@ class ProductsPageView extends GetView<ProductsPageController> {
     );
   }
 
-  void showDeleteConfirmationDialog(BuildContext context, String itemId) {
+  void showDeleteConfirmationDialog(
+      BuildContext context, String itemId, int index) {
+    // debugPrint(itemId.toString());
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -224,7 +238,8 @@ class ProductsPageView extends GetView<ProductsPageController> {
             ),
             TextButton(
               onPressed: () {
-                controller.deleteItem(itemId);
+                Get.back();
+                controller.deleteItem(index);
               },
               style: TextButton.styleFrom(foregroundColor: Colors.red),
               child: Text('Yes'),
@@ -237,37 +252,44 @@ class ProductsPageView extends GetView<ProductsPageController> {
 
   Widget itemListDesign() {
     return Obx(() {
-      return Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20.0,
-          vertical: 20,
-        ),
-        child: GridView.builder(
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            mainAxisSpacing: 20,
-            crossAxisSpacing: 20,
-            crossAxisCount: 2,
-          ),
-          itemCount: controller.productList.length,
-          itemBuilder: (context, index) {
-            var data = controller.productList[index];
-            final parsedDate = DateTime.tryParse(data.createdAt ?? "");
-            String date = "";
-            if (parsedDate != null) {
-              date = DateFormat('dd-MM-yyyy').format(parsedDate);
-            }
-            //GRID DESIGN START FROM HERE
-            return gridDesign(
-              context,
-              data.name ?? "",
-              (data.price ?? 0).toInt(),
-              date,
-              data.id ?? "",
-              itemDescription: data.description,
+      return controller.isDataLoaded.value
+          ? Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20.0,
+                vertical: 20,
+              ),
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 20,
+                  crossAxisCount: 2,
+                ),
+                itemCount: controller.productList.length,
+                itemBuilder: (context, index) {
+                  var data = controller.productList[index];
+                  final parsedDate = DateTime.tryParse(data.createdAt ?? "");
+                  String date = "";
+                  if (parsedDate != null) {
+                    date = DateFormat('dd-MM-yyyy').format(parsedDate);
+                  }
+                  //GRID DESIGN START FROM HERE
+                  return gridDesign(
+                    context,
+                    index,
+                    data.name ?? "",
+                    (data.price ?? 0).toInt(),
+                    date,
+                    data.id ?? "",
+                    itemDescription: data.description,
+                  );
+                },
+              ),
+            )
+          : const Center(
+              child: CircularProgressIndicator.adaptive(
+                backgroundColor: Colors.pink,
+              ),
             );
-          },
-        ),
-      );
     });
   }
 }

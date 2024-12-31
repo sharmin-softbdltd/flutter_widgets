@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-import '../../utils/constant.dart';
+import '../../../routes/app_pages.dart';
+import '../../../utils/constant.dart';
 import 'add_edit_item_controller.dart';
 
 class AddEditItemView extends GetView<AddEditItemController> {
@@ -10,8 +11,9 @@ class AddEditItemView extends GetView<AddEditItemController> {
 
   @override
   Widget build(BuildContext context) {
-    final args = Get.arguments;
-    final itemId = args['itemId'];
+    debugPrint('build:  ${Get.previousRoute}');
+    // final args = Get.arguments;
+    // final itemId = args['itemId'];
     // final appBarTitle = args['appBarTitle'];
     //
     // final itemName = args['name'];
@@ -20,11 +22,13 @@ class AddEditItemView extends GetView<AddEditItemController> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'),
+        title: Text(
+          Get.previousRoute == Routes.PRODUCTS_PAGE ? "Add Items" : "Edit Item",
+        ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 40),
+        padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,10 +105,16 @@ class AddEditItemView extends GetView<AddEditItemController> {
                       width: Get.width,
                       child: ElevatedButton(
                         onPressed: () {
-                          controller.submitItem(itemId);
+                          if (Get.previousRoute == Routes.PRODUCTS_PAGE) {
+                            controller.addNewItem();
+                          } else {
+                            controller.updateNewItem();
+                          }
                         },
                         child: Text(
-                          'Update Item',
+                          Get.previousRoute == Routes.PRODUCTS_PAGE
+                              ? "Add Items"
+                              : "Update Item",
                           style: TextStyle(color: Colors.pink),
                         ),
                       ),
