@@ -1,35 +1,31 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/app/models/products/get_item_list_model.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
 class ProductsPageController extends GetxController {
   final isDeleting = false.obs;
+  final productList = <Data>[].obs;
 
   @override
   void onInit() {
-    // TODO: implement onInit
     super.onInit();
-    fetchItemDetails();
+    fetchItemList();
   }
 
-  Future fetchItemDetails() async {
-    try {
-      final response = await http.get(
-          Uri.parse('https://vocabulary-backend-fm6a.onrender.com/api/items'));
+  void fetchItemList() async {
+    final response = await http.get(
+        Uri.parse('https://vocabulary-backend-fm6a.onrender.com/api/items'));
 
-      // final data = weatherDataModelFromJson(response.body.toString());
+    // final data = weatherDataModelFromJson(response.body.toString());
+    // final data = jsonDecode(response.body);
 
-      final data = jsonDecode(response.body);
-      if (response.statusCode != 200) {
-        debugPrint('error');
-        throw 'Failed to load data, status code: ${response.statusCode}';
-      }
-
-      return data;
-    } catch (e) {
-      throw e.toString();
+    GetItemListModel model = getItemListModelFromJson(response.body);
+    if (model.status ?? false) {
+      productList.value = model.data ?? [];
+    } else {
+      Get.snackbar('Failed',
+          model.message ?? "Something went wrong. Please try again later.");
     }
   }
 

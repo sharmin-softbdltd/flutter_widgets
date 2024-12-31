@@ -15,14 +15,14 @@ class ProductsPageView extends GetView<ProductsPageController> {
         title: const Text('Items'),
         centerTitle: true,
       ),
-      body: Obx(() {
+      /*body: Obx(() {
         return controller.isDeleting.value
             ? Center(
                 child: CircularProgressIndicator.adaptive(
                     backgroundColor: Colors.pink),
               )
             : FutureBuilder(
-                future: controller.fetchItemDetails(),
+                future: controller.fetchItemList(),
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
                     return const Center(
@@ -83,7 +83,8 @@ class ProductsPageView extends GetView<ProductsPageController> {
                   );
                 },
               );
-      }),
+      }),*/
+      body: itemListDesign(),
       floatingActionButton: TextButton(
         onPressed: () {},
         style: TextButton.styleFrom(backgroundColor: Colors.pink),
@@ -232,5 +233,41 @@ class ProductsPageView extends GetView<ProductsPageController> {
         );
       },
     );
+  }
+
+  Widget itemListDesign() {
+    return Obx(() {
+      return Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20.0,
+          vertical: 20,
+        ),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
+            crossAxisCount: 2,
+          ),
+          itemCount: controller.productList.length,
+          itemBuilder: (context, index) {
+            var data = controller.productList[index];
+            final parsedDate = DateTime.tryParse(data.createdAt ?? "");
+            String date = "";
+            if (parsedDate != null) {
+              date = DateFormat('dd-MM-yyyy').format(parsedDate);
+            }
+            //GRID DESIGN START FROM HERE
+            return gridDesign(
+              context,
+              data.name ?? "",
+              (data.price ?? 0).toInt(),
+              date,
+              data.id ?? "",
+              itemDescription: data.description,
+            );
+          },
+        ),
+      );
+    });
   }
 }
