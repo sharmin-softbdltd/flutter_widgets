@@ -188,8 +188,8 @@ class FormValidationView extends GetView<FormValidationController> {
                     Row(
                       children: [
                         SizedBox(
-                          width: 20,
-                          height: 20,
+                          width: 15,
+                          height: 15,
                           child: Obx(
                             () {
                               return Checkbox(
@@ -217,7 +217,7 @@ class FormValidationView extends GetView<FormValidationController> {
                                   text: ' and ',
                                   style: Theme.of(context).textTheme.bodySmall),
                               TextSpan(
-                                  text: ' Terms & Conditions',
+                                  text: ' Terms',
                                   style: Theme.of(context).textTheme.bodySmall),
                             ],
                           ),

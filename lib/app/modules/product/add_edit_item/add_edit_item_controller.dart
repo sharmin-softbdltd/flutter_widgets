@@ -43,7 +43,7 @@ class AddEditItemController extends GetxController {
       return 'Description must be required';
     } else if (value.length < 5) {
       return 'Item Description is too short';
-    } else if (value.length > 50) {
+    } else if (value.length > 100) {
       return 'Item Description is too Long';
     }
 
