@@ -125,13 +125,6 @@ class ProductsPageView extends GetView<ProductsPageController> {
           onTap: () {
             controller.selectedItem.value = controller.productList[index];
             Get.toNamed(Routes.ITEM_DETAILS);
-            /*Get.toNamed('/item-details', arguments: {
-              'itemId': itemId,
-              'date': date,
-              'price': itemPrice,
-              'name': itemName,
-              'description': itemDescription,
-            });*/
           },
           child: Container(
             height: Get.height * 0.5,
@@ -238,7 +231,7 @@ class ProductsPageView extends GetView<ProductsPageController> {
             ),
             TextButton(
               onPressed: () {
-                Get.back();
+                Navigator.of(context).pop();
                 controller.deleteItem(index);
               },
               style: TextButton.styleFrom(foregroundColor: Colors.red),

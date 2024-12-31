@@ -61,18 +61,6 @@ class AddEditItemController extends GetxController {
   }
 
   initializedInputFields() {
-    /*final args = Get.arguments;
-    // Initialize controllers with passed arguments
-    itemTitleController = TextEditingController(
-      text: args['name'] ?? '',
-    );
-    itemDescriptionController = TextEditingController(
-      text: args['description'] ?? '',
-    );
-    itemPriceController = TextEditingController(
-      text: args['price']?.toString() ?? '',
-    );*/
-
     itemTitleController.text = selectedProduct.name ?? "";
     itemDescriptionController.text = selectedProduct.description ?? "";
     itemPriceController.text = (selectedProduct.price ?? "").toString();

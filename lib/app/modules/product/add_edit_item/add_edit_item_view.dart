@@ -11,14 +11,7 @@ class AddEditItemView extends GetView<AddEditItemController> {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('build:  ${Get.previousRoute}');
-    // final args = Get.arguments;
-    // final itemId = args['itemId'];
-    // final appBarTitle = args['appBarTitle'];
-    //
-    // final itemName = args['name'];
-    // final itemDescription = args['description'];
-    // final itemPrice = args['price'];
+    // debugPrint('build:  ${Get.previousRoute}');
 
     return Scaffold(
       appBar: AppBar(
