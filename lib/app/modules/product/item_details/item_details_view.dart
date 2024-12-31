@@ -12,12 +12,6 @@ class ItemDetailsView extends GetView<ItemDetailsController> {
 
   @override
   Widget build(BuildContext context) {
-    // final args = Get.arguments;
-    // final itemName = args['name'];
-    // final itemDescription = args['description'];
-    // final date = args['date'];
-    // final itemPrice = args['price'];
-    // final itemId = args['itemId'];
     return Obx(() {
       final Data selectedProduct =
           Get.find<ProductsPageController>().selectedItem.value;
@@ -28,13 +22,6 @@ class ItemDetailsView extends GetView<ItemDetailsController> {
             IconButton(
               onPressed: () {
                 Get.toNamed(Routes.ADD_EDIT_ITEM);
-                /*Get.toNamed('/add-edit-item', arguments: {
-                'itemId': itemId,
-                'date': date,
-                'price': itemPrice,
-                'name': itemName,
-                'description': itemDescription,
-              });*/
               },
               icon: Icon(Icons.edit),
             ),

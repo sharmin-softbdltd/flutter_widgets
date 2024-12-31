@@ -26,6 +26,12 @@ import '../modules/list_view_builder_page/list_view_builder_page_binding.dart';
 import '../modules/list_view_builder_page/list_view_builder_page_view.dart';
 import '../modules/list_view_separator_page/list_view_separator_page_binding.dart';
 import '../modules/list_view_separator_page/list_view_separator_page_view.dart';
+import '../modules/new_products_page/add_edit_page/add_edit_page_binding.dart';
+import '../modules/new_products_page/add_edit_page/add_edit_page_view.dart';
+import '../modules/new_products_page/new_products_page_binding.dart';
+import '../modules/new_products_page/new_products_page_view.dart';
+import '../modules/new_products_page/product_details_page/product_details_page_binding.dart';
+import '../modules/new_products_page/product_details_page/product_details_page_view.dart';
 import '../modules/page_view_widget/page_view_widget_binding.dart';
 import '../modules/page_view_widget/page_view_widget_view.dart';
 import '../modules/product/add_edit_item/add_edit_item_binding.dart';
@@ -141,6 +147,23 @@ class AppPages {
       name: _Paths.ADD_EDIT_ITEM,
       page: () => const AddEditItemView(),
       binding: AddEditItemBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEW_PRODUCTS_PAGE,
+      page: () => const NewProductsPageView(),
+      binding: NewProductsPageBinding(),
+      children: [
+        GetPage(
+          name: _Paths.PRODUCT_DETAILS_PAGE,
+          page: () => const ProductDetailsPageView(),
+          binding: ProductDetailsPageBinding(),
+        ),
+        GetPage(
+          name: _Paths.ADD_EDIT_PAGE,
+          page: () => const AddEditPageView(),
+          binding: AddEditPageBinding(),
+        ),
+      ],
     ),
   ];
 }

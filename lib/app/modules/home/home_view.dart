@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_widgets/app/routes/app_pages.dart';
 import 'package:get/get.dart';
 
 import 'home_controller.dart';
@@ -31,6 +32,17 @@ class HomeView extends GetView<HomeController> {
               'Widgets Lists',
               style: Theme.of(context).textTheme.titleMedium,
               // style: Get.textTheme.titleMedium,
+            ),
+          ),
+          ListTile(
+            dense: true,
+            onTap: () {
+              Get.toNamed(Routes.NEW_PRODUCTS_PAGE);
+            },
+            hoverColor: Colors.white70,
+            title: Text(
+              'New Products Page',
+              style: Theme.of(context).textTheme.titleMedium,
             ),
           ),
           ListTile(

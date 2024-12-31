@@ -25,6 +25,10 @@ abstract class Routes {
   static const PRODUCTS_PAGE = _Paths.PRODUCTS_PAGE;
   static const ITEM_DETAILS = _Paths.ITEM_DETAILS;
   static const ADD_EDIT_ITEM = _Paths.ADD_EDIT_ITEM;
+  static const NEW_PRODUCTS_PAGE = _Paths.NEW_PRODUCTS_PAGE;
+  static const PRODUCT_DETAILS_PAGE =
+      _Paths.NEW_PRODUCTS_PAGE + _Paths.PRODUCT_DETAILS_PAGE;
+  static const ADD_EDIT_PAGE = _Paths.NEW_PRODUCTS_PAGE + _Paths.ADD_EDIT_PAGE;
 }
 
 abstract class _Paths {
@@ -51,4 +55,7 @@ abstract class _Paths {
   static const PRODUCTS_PAGE = '/products-page';
   static const ITEM_DETAILS = '/item-details';
   static const ADD_EDIT_ITEM = '/add-edit-item';
+  static const NEW_PRODUCTS_PAGE = '/new-products-page';
+  static const PRODUCT_DETAILS_PAGE = '/product-details-page';
+  static const ADD_EDIT_PAGE = '/add-edit-page';
 }
